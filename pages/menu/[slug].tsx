@@ -35,12 +35,12 @@ const ProductPage = ({ product }: ProductPageProps) => {
           <article className='product'>
             <h1 className='product__name'>{product.name}</h1>
             <span className='product__price'>{formatPrice(product.price)}</span>
-            {/* <p className='product__description'>{product.description}</p> */}
-            <p className='product__description'>
+            <p className='product__description'>{product.description}</p>
+            {/* <p className='product__description'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dicta? Saepe
               dolorem iste, ipsum maxime harum ullam, at quod officiis explicabo amet earum
               minima repellendus perspiciatis nobis incidunt, dolore iure.
-            </p>
+            </p> */}
             {product.options.length > 0 && (
               <div className='product__options'>
                 <h2 className='productpage__section--header'>Options</h2>
