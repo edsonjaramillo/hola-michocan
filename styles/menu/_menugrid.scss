@@ -1,0 +1,40 @@
+.menuitem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 1rem;
+  @include media('>=md') {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
+
+  &__recommendation {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 1rem;
+    @include media('>=md') {
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    }
+  }
+}
+
+.menuitem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  &__image {
+    position: relative;
+    aspect-ratio: 3/4;
+  }
+
+  &__name {
+    font-size: clamp(1.15rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &__price {
+    color: $grayscale-600;
+  }
+}

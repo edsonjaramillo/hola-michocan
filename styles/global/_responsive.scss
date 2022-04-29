@@ -1,0 +1,29 @@
+.responsive-width {
+  width: min(90%, 72rem);
+  margin: auto;
+}
+
+.responsive-width-product {
+  width: min(90%, 55rem);
+  margin: auto;
+}
+
+.responsive-width-contact {
+  width: min(90%, 37rem);
+  margin: auto;
+}
+
+.responsive-width-footer {
+  width: fit-content;
+  margin: auto;
+}
+
+.responsive-width-sitemap {
+  width: min(90%, 40rem);
+  margin: auto;
+  min-height: 70vh;
+}
+
+.min-height {
+  min-height: 70vh;
+}

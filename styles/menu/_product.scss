@@ -1,0 +1,73 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  &__name {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-weight: 700;
+  }
+
+  &__image {
+    position: relative;
+    aspect-ratio: 3/4;
+  }
+
+  &__description {
+    color: $grayscale-800;
+  }
+
+  &__price {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: $grayscale-800;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__option {
+    display: flex;
+    flex-direction: row;
+  }
+
+  $padding-gap: 0.5rem;
+
+  &__optionname {
+    color: $grayscale-800;
+    padding-right: $padding-gap;
+    border-right: 2px solid $grayscale-700;
+  }
+
+  &__optionprice {
+    color: $grayscale-700;
+    padding-left: $padding-gap;
+  }
+}
+
+.productpage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 70vh;
+  padding: $section-padding;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: 1rem;
+  }
+
+  &__recommendation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__section--header {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 600;
+  }
+}

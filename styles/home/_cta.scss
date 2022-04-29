@@ -1,0 +1,110 @@
+.cta {
+  height: 60vh;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: 100%;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: auto;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.5rem, 7vw, 2.25rem);
+    text-align: center;
+  }
+
+  &__image {
+    display: none;
+  }
+
+  &__buttongroup {
+    display: flex;
+    gap: 1rem;
+    margin: auto;
+  }
+
+  &__primarybutton {
+    @include button-size(1rem);
+    background-color: $brand-primary;
+    color: $grayscale-100;
+    border-radius: $border-radius * 3;
+  }
+
+  &__altbutton {
+    @include button-size-alt(1rem, 0.25rem, $brand-primary);
+    background-color: $grayscale-100;
+    color: $brand-primary;
+    border-radius: $border-radius * 3;
+  }
+
+  @include media('>sm') {
+    &__primarybutton {
+      @include button-size(1.15rem);
+    }
+
+    &__altbutton {
+      @include button-size-alt(1.15rem, 0.25rem, $brand-primary);
+    }
+  }
+
+  @include media('>=md') {
+    height: clamp(40vh, 50vw, 70vh);
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    &__title {
+      font-size: clamp(2rem, 4vw, 3.75rem);
+      font-weight: 600;
+      text-align: left;
+      color: $brand-secondary-400;
+    }
+
+    &__subtitle {
+      font-size: clamp(1rem, 3vw, 2.25rem);
+      text-align: left;
+      color: $grayscale-500;
+    }
+
+    &__buttongroup {
+      margin: unset;
+    }
+
+    &__image {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: $border-radius 0rem 0rem $border-radius;
+    }
+
+    &__primarybutton {
+      @include button-size(1rem);
+    }
+
+    &__altbutton {
+      @include button-size-alt(1rem, 0.25rem, $brand-primary);
+    }
+  }
+
+  @include media('>lg') {
+    &__primarybutton {
+      @include button-size(1.25rem);
+    }
+
+    &__altbutton {
+      @include button-size-alt(1.25rem, 0.25rem, $brand-primary);
+    }
+  }
+}
