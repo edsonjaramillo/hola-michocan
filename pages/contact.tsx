@@ -45,6 +45,8 @@ const ContactPage: NextPage = () => {
     }
   };
 
+  const onReject = () => toastNotification(ToastType.ERROR, 'Check input requirements.');
+
   return (
     <>
       <HeadOpenGraph
@@ -58,7 +60,7 @@ const ContactPage: NextPage = () => {
         <div className='contact__grid'>
           <h1 className='contact__header'>Get in Touch!</h1>
           <span className='contact__subheader'>
-            I hope to help and answer any questions you might have. I look forward to hearing
+            We hope to help and answer any questions you might have. We look forward to hearing
             from you.
           </span>
         </div>
@@ -69,11 +71,7 @@ const ContactPage: NextPage = () => {
         </div>
       </div>
 
-      <form
-        className='form'
-        onSubmit={handleSubmit(onSubmit, () =>
-          toastNotification(ToastType.ERROR, 'Check input requirements.')
-        )}>
+      <form className='form' onSubmit={handleSubmit(onSubmit, onReject)}>
         <div className='form__grid responsive-width-contact'>
           <FormGroupLabel name='name' label='Name' errors={errors.name}>
             <CustomInput
