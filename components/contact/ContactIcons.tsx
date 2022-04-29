@@ -1,5 +1,3 @@
-import { title } from 'process';
-
 interface ContainerIconProps {
   name: string;
   href: string;
