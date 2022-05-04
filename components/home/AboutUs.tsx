@@ -6,7 +6,7 @@ interface AboutUsProps {
 }
 
 const AboutUs = ({ src, alt }: AboutUsProps) => (
-  <div className='aboutus'>
+  <div id='about' className='aboutus'>
     <div className='aboutus__image'>
       <Image src={src} alt={alt} layout='fill' objectFit='cover' priority />
     </div>
