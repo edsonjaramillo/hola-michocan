@@ -1,5 +1,7 @@
 import { Section } from '@/components/index';
-import { CategoryType, formatPrice, ProductType } from '@/lib/graphcms';
+import { CategoryType, ProductType } from '@/lib/graphcms/types';
+import { formatPrice } from '@/lib/graphcms/helper';
+
 import Image from 'next/image';
 import Link from 'next/link';
 

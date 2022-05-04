@@ -1,4 +1,4 @@
-import { ProductType } from '@/lib/graphcms';
+import { ProductType } from '@/lib/graphcms/types';
 import { MenuItem } from '@/components/index';
 
 interface RecommendationsProps {
