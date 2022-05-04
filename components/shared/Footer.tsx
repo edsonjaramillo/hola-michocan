@@ -29,6 +29,15 @@ const FooterLink = ({ slug, name }: FooterLinkProps) => (
     <a className='footer__link'>{name}</a>
   </Link>
 );
+const FooterLinkExternal = ({ slug, name }: FooterLinkProps) => (
+  <a
+    className='footer__link'
+    href={slug}
+    rel='noopener nofollow noreferrer external'
+    target='_blank'>
+    {name}
+  </a>
+);
 
 const Footer = () => (
   <footer className='footer'>
@@ -43,6 +52,9 @@ const Footer = () => (
           <FooterLink slug='/privacy' name='Privacy Policy' />
           <FooterLink slug='/terms' name='Terms and Conditions' />
           <FooterLink slug='/sitemap' name='Sitemap' />
+        </FooterSection>
+        <FooterSection header='Information'>
+          <FooterLinkExternal slug='https://google.com' name='Write a Review' />
         </FooterSection>
       </div>
       <div className='footer__socialgrid'>
