@@ -11,7 +11,7 @@ const AboutUs = ({ src, alt }: AboutUsProps) => (
       <Image src={src} alt={alt} layout='fill' objectFit='cover' priority />
     </div>
     <div className='aboutus__information'>
-      <h2 className='aboutus__header'>Who are we?</h2>
+      <h2 className='aboutus__header'>Get to know us!</h2>
       <p className='aboutus__subtext'>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta, soluta magni adipisci
         sequi saepe pariatur nam qui voluptatem beatae, quo deserunt culpa optio sint debitis
