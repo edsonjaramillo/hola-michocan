@@ -2,9 +2,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
   gap: 1rem;
-  @include media('>=md') {
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  @include media('>md') {
+    grid-template-columns: repeat(auto-fill, minmax(13.75rem, 1fr));
   }
+  // @include media('>lg') {
+  //   grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  // }
 
   &__recommendation {
     display: grid;
