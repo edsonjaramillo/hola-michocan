@@ -1,7 +1,13 @@
-import { formatPrice, ProductType } from '@/lib/graphcms';
+import { ProductType } from '@/lib/graphcms/types';
+import { formatPrice } from '@/lib/graphcms/helper';
 import Head from 'next/head';
-const ProductJSONLD = (product: ProductType) => {
-  const JSONLD = `
+
+interface ProductJSONLDProps {
+  product: ProductType;
+}
+
+const ProductJSONLD = ({ product }: ProductJSONLDProps) => {
+  const ProductJSONLD = `
     {
         "@context": "http://schema.org",
         "@type": "Product",
@@ -10,6 +16,9 @@ const ProductJSONLD = (product: ProductType) => {
         "description": "${product.description}",
         "offers": {
             "@type": "Offer",
+            "url": "https://holamichoacanicecream.com/${product.category.slug}/${
+    product.slug
+  }",
             "priceCurrency": "USD",
             "price": "${formatPrice(product.price)}",
             "itemCondition": "http://schema.org/NewCondition",
@@ -20,7 +29,7 @@ const ProductJSONLD = (product: ProductType) => {
 
   return (
     <Head>
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSONLD }} />
+      <script type='application/ld+json'>{ProductJSONLD}</script>
     </Head>
   );
 };
