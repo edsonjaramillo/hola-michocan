@@ -1,5 +1,5 @@
 import { ProductType } from '@/lib/graphcms/types';
-import { Section, ProductGridItem } from '@/components/index';
+import { Section, MenuItem } from '@/components/index';
 
 interface FeaturedProductsProps {
   products: ProductType[];
@@ -9,7 +9,7 @@ const FeaturedProducts = ({ products }: FeaturedProductsProps) => (
   <Section header='Featured Items'>
     <div className='menuitem-grid'>
       {products.map((product) => (
-        <ProductGridItem key={product.id} {...product} />
+        <MenuItem key={product.id} {...product} />
       ))}
     </div>
   </Section>
