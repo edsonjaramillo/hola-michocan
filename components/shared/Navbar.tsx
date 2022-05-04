@@ -12,10 +12,10 @@ export const navbarLinks = [
     slug: '/menu',
     name: 'Menu',
   },
-  // {
-  //   slug: '/about',
-  //   name: 'About',
-  // },
+  {
+    slug: '/#about',
+    name: 'About',
+  },
   {
     slug: '/contact',
     name: 'Contact',
