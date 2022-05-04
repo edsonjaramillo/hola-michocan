@@ -1,0 +1,50 @@
+.aboutus {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 1fr;
+  background-color: $brand-secondary-400;
+  height: 35rem;
+  scroll-margin-top: 4rem;
+
+  &__image {
+    position: relative;
+    grid-row: 2;
+  }
+
+  &__information {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 35rem;
+    margin: auto;
+    color: $grayscale-100;
+  }
+
+  &__header {
+    font-size: clamp(1.65rem, 2.5vw, 4rem);
+    font-weight: 700;
+  }
+
+  &__subtext {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 500;
+  }
+
+  &__link {
+    @include button-size(1rem);
+    background-color: $grayscale-100;
+    color: $brand-secondary-400;
+    width: fit-content;
+    border-radius: $border-radius;
+    font-weight: 500;
+  }
+
+  @include media('>md') {
+    grid-template-columns: repeat(2, 1fr);
+    &__image {
+      grid-row: 1;
+    }
+  }
+}
