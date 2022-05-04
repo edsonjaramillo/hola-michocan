@@ -1,6 +1,8 @@
-import { getCategories, graphCMSClient, CategoryType } from '@/lib/graphcms';
-import { GetServerSideProps, GetServerSidePropsContext, GetStaticProps } from 'next';
-import { ProductGridItem, Section } from '@/components/index';
+import { graphCMSClient } from '@/lib/graphcms/client';
+import { getCategories } from '@/lib/graphcms/queries';
+import { CategoryType } from '@/lib/graphcms/types';
+import { GetServerSideProps } from 'next';
+import { MenuItem, Section } from '@/components/index';
 
 interface MenuPageProps {
   categories: CategoryType[];
@@ -13,7 +15,7 @@ const MenuPage = ({ categories }: MenuPageProps) => {
         <Section key={category.id} id={category.id} header={category.name}>
           <div className='menuitem-grid'>
             {category.products.map((product) => (
-              <ProductGridItem key={product.id} {...product} />
+              <MenuItem key={product.id} {...product} />
             ))}
           </div>
         </Section>

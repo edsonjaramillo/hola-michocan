@@ -1,5 +1,7 @@
 import { navbarLinks } from '@/components/shared/Navbar';
-import { CategoryType, getCategoriesSitemap, graphCMSClient } from '@/lib/graphcms';
+import { graphCMSClient } from '@/lib/graphcms/client';
+import { getCategoriesSitemap } from '@/lib/graphcms/queries';
+import { CategoryType } from '@/lib/graphcms/types';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
