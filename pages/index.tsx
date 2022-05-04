@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { CTA, RestaurantJSONLD, AboutUs, FeaturedProducts } from '@/components/index';
+import { HeadOpenGraph } from '@/components/index';
 import { graphCMSClient } from '@/lib/graphcms/client';
 import { getFeaturedProducts, getProductsJSONLD } from '@/lib/graphcms/queries';
 import { ProductType } from '@/lib/graphcms/types';
@@ -11,9 +12,15 @@ interface HomepageProps {
 
 const Home = ({ menuProducts, featuredProducts }: HomepageProps) => (
   <>
+    <HeadOpenGraph
+      title='Homepage'
+      description='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis quod quo enim culpa labore facilis?'
+      image='https://picsum.photos/id/1060/1200/900'
+      alt='Homepage'
+    />
     <RestaurantJSONLD products={menuProducts} />
-    <CTA src='https://picsum.photos/id/1060/1920/1080' alt='coffee being brewed' />
-    <AboutUs src='https://picsum.photos/id/513/1920/1080' alt='coffee being brewed' />
+    <CTA src='https://picsum.photos/id/1060/1200/900' alt='coffee being brewed' />
+    <AboutUs src='https://picsum.photos/id/513/1200/900' alt='coffee being brewed' />
     <FeaturedProducts products={featuredProducts} />
   </>
 );
