@@ -8,7 +8,7 @@ export { default as CTA } from '@/components/home/CTA';
 export { default as AboutUs } from '@/components/home/AboutUs';
 export { default as FeaturedProducts } from '@/components/home/FeaturedProducts';
 
-export { default as ProductGridItem } from '@/components/menu/ProductGridItem';
+export { default as MenuItem } from '@/components/menu/MenuItem';
 export { default as ProductJSONLD } from '@/components/menu/ProductJSONLD';
 export { default as RestaurantJSONLD } from '@/components/menu/RestaurantJSONLD';
 export { default as Recommendations } from '@/components/menu/Recommendations';

@@ -1,9 +1,10 @@
-import { formatPrice, ProductType } from '@/lib/graphcms';
+import { ProductType } from '@/lib/graphcms/types';
+import { formatPrice } from '@/lib/graphcms/helper';
 import Link from 'next/link';
 import { BlurImage } from '@/components/index';
 
-const ProductGridItem = ({ name, description, price, slug, image }: ProductType) => (
-  <Link href={`/menu/${slug}`}>
+const MenuItem = ({ name, category, description, price, slug, image }: ProductType) => (
+  <Link href={`/menu/${category.slug}/${slug}`}>
     <a title={name}>
       <article className='menuitem'>
         <div className='menuitem__image'>
@@ -21,4 +22,4 @@ const ProductGridItem = ({ name, description, price, slug, image }: ProductType)
   </Link>
 );
 
-export default ProductGridItem;
+export default MenuItem;
