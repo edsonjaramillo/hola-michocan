@@ -7,7 +7,9 @@ const BlurImage = (imageProps: ImageProps) => {
   return (
     <Image
       {...imageProps}
-      className={`blurimage__transition ${isLoaded == true ? 'blurimage--noblur' : 'blurimage--blur'}`}
+      className={`blurimage__transition ${
+        isLoaded == true ? 'blurimage--noblur' : 'blurimage--blur'
+      }`}
       onLoadingComplete={() => setIsLoaded(true)}
       // onClick={() => setIsLoaded(!isLoaded)}
     />

@@ -27,11 +27,7 @@ const Sitemap = ({ categories }: SitemapPageProps) => (
       {categories.map((category) => (
         <SitemapSection key={category.id} header={category.name}>
           {category.products.map((product) => (
-            <SitemapLink
-              key={product.id}
-              slug={`/product/${product.slug}`}
-              name={product.name}
-            />
+            <SitemapLink key={product.id} slug={`/product/${product.slug}`} name={product.name} />
           ))}
         </SitemapSection>
       ))}

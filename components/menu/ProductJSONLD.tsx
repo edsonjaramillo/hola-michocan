@@ -16,9 +16,7 @@ const ProductJSONLD = ({ product }: ProductJSONLDProps) => {
         "description": "${product.description}",
         "offers": {
             "@type": "Offer",
-            "url": "https://holamichoacanicecream.com/${product.category.slug}/${
-    product.slug
-  }",
+            "url": "https://holamichoacanicecream.com/${product.category.slug}/${product.slug}",
             "priceCurrency": "USD",
             "price": "${formatPrice(product.price)}",
             "itemCondition": "http://schema.org/NewCondition",

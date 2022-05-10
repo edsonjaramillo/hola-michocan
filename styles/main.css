@@ -110,7 +110,7 @@ hr {
   padding: 0.68rem 1.275rem;
   font-size: 0.85rem;
   font-weight: 500;
-  background-color: #FF7E26;
+  background-color: #ff7e26;
   color: #ffffff;
   z-index: 100;
   border-radius: 0 0 0.6rem 0.6rem;
@@ -207,7 +207,7 @@ hr {
   font-size: 3rem;
   font-weight: 600;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #FF7E26;
+  border-bottom: 1px solid #ff7e26;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -221,7 +221,7 @@ hr {
   font-weight: 600;
 }
 .footer__link {
-  color: #FF7E26;
+  color: #ff7e26;
 }
 .footer__linksgrid {
   display: flex;
@@ -242,15 +242,15 @@ hr {
 }
 .footer__socialicon {
   width: 25px;
-  fill: #FF7E26;
+  fill: #ff7e26;
 }
 .footer__clearsvg {
-  fill: #FF7E26;
+  fill: #ff7e26;
 }
 .footer__copyright {
   display: flex;
   justify-content: center;
-  color: #FF7E26;
+  color: #ff7e26;
   font-size: 0.9rem;
 }
 @media (min-width: 768px) {
@@ -295,7 +295,7 @@ hr {
   background-color: #d9dde7;
 }
 .section--bg--secondary-400 {
-  background-color: #FF7E26;
+  background-color: #ff7e26;
 }
 .section--bg--grayscale-100 {
   background-color: #ffffff;
@@ -337,7 +337,7 @@ hr {
   color: #d9dde7;
 }
 .section--text--secondary-400 {
-  color: #FF7E26;
+  color: #ff7e26;
 }
 .section--text--grayscale-100 {
   color: #ffffff;
@@ -460,7 +460,7 @@ hr {
 .sitemap__section--title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #FF7E26;
+  color: #ff7e26;
 }
 .sitemap__link {
   color: #606060;
@@ -486,7 +486,7 @@ hr {
 .sitemap__section--title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #FF7E26;
+  color: #ff7e26;
 }
 .sitemap__link {
   color: #606060;
@@ -571,7 +571,7 @@ hr {
   background-color: #c10076;
 }
 .cta--secondary {
-  background-color: #FF7E26;
+  background-color: #ff7e26;
 }
 .cta--secondary:hover {
   background-color: #ff7212;
@@ -581,7 +581,7 @@ hr {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: 1fr;
-  background-color: #FF7E26;
+  background-color: #ff7e26;
   height: 35rem;
   scroll-margin-top: 4rem;
 }
@@ -612,7 +612,7 @@ hr {
   font-size: 1rem;
   font-weight: 500;
   background-color: #ffffff;
-  color: #FF7E26;
+  color: #ff7e26;
   width: fit-content;
   border-radius: 0.6rem;
   font-weight: 500;
@@ -666,7 +666,7 @@ hr {
   background-color: #e0e0e0;
 }
 .contact__icon {
-  fill: #FF7E26;
+  fill: #ff7e26;
   height: clamp(2.15rem, 3vw, 2.5rem);
   margin: 0rem auto;
 }
@@ -718,7 +718,7 @@ hr {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
-  color: #FF7E26;
+  color: #ff7e26;
   font-weight: 600;
 }
 .form__input {

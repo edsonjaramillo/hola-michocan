@@ -60,8 +60,8 @@ const ContactPage: NextPage = () => {
         <div className='contact__grid'>
           <h1 className='contact__header'>Get in Touch!</h1>
           <span className='contact__subheader'>
-            We hope to help and answer any questions you might have. We look forward to hearing
-            from you.
+            We hope to help and answer any questions you might have. We look forward to hearing from
+            you.
           </span>
         </div>
         <div className='contact__buttongrid'>

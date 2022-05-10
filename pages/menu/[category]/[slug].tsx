@@ -43,9 +43,7 @@ const ProductPage = ({ product }: ProductPageProps) => (
   </>
 );
 
-export const getServerSideProps: GetServerSideProps = async (
-  ctx: GetServerSidePropsContext
-) => {
+export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSidePropsContext) => {
   const { slug } = ctx.params as { slug: string };
 
   const { product } = await graphCMSClient.request(getProduct, { slug });
