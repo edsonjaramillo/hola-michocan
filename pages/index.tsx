@@ -12,6 +12,7 @@ interface HomepageProps {
 
 const Home = ({ menuProducts, featuredProducts }: HomepageProps) => (
   <>
+    {/* <pre>{JSON.stringify(menuProducts, null, 2)}</pre> */}
     <HeadOpenGraph
       title='Homepage'
       description='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis quod quo enim culpa labore facilis?'

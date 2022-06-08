@@ -5,14 +5,9 @@ export const getCategories = gql`
     categories(orderBy: name_ASC) {
       id
       name
-      slug
       products(orderBy: price_ASC) {
         id
         name
-        category {
-          id
-          slug
-        }
         slug
         price
         image {
@@ -53,9 +48,6 @@ export const getFeaturedProducts = gql`
     products(where: { featured: true }) {
       id
       name
-      category {
-        slug
-      }
       description
       slug
       price
@@ -73,8 +65,8 @@ export const getProductsJSONLD = gql`
     products {
       id
       name
-      category {
-        slug
+      image {
+        url
       }
       description
       slug

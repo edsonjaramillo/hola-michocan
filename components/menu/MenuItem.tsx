@@ -3,8 +3,8 @@ import { formatPrice } from '@/lib/graphcms/helper';
 import Link from 'next/link';
 import { BlurImage } from '@/components/index';
 
-const MenuItem = ({ name, category, description, price, slug, image }: ProductType) => (
-  <Link href={`/menu/${category.slug}/${slug}`}>
+const MenuItem = ({ name, description, price, slug, image }: ProductType) => (
+  <Link href={`/menu/${slug}`}>
     <a title={name}>
       <article className='menuitem'>
         <div className='menuitem__image'>
