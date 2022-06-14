@@ -4,18 +4,9 @@ import Head from 'next/head';
 
 interface ProductJSONLDProps {
   products: ProductType[];
-}
-
-interface MenuItemProps {
-  name: string;
   description: string;
-  price: number;
-  slug: string;
-  categorySlug: string;
-  lastItem: boolean;
 }
-
-const RestaurantJSONLD = ({ products }: ProductJSONLDProps) => {
+const RestaurantJSONLD = ({ products, description }: ProductJSONLDProps) => {
   const menuItems = products.map((product) => ({
     name: product.name,
     description: product.description,
@@ -32,8 +23,8 @@ const RestaurantJSONLD = ({ products }: ProductJSONLDProps) => {
     '@type': 'Restaurant',
     url: 'https://holamichoacanicecream.com',
     name: 'Hola Michoacan',
-    image: 'http://www.example.com/image-of-some-restaurant.jpg',
-    description: 'This is an example restaurant that serves American cuisine.',
+    image: 'https://media.graphassets.com/5Ggwcd9ORgGCtQc3vXa4',
+    description: description,
     priceRange: '$',
     address: {
       '@type': 'PostalAddress',
