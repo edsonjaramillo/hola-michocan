@@ -35,9 +35,11 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    color: $brand-primary;
   }
 
   &__price {
     color: $grayscale-600;
-  }
+    font-weight: 500;
+}
 }
