@@ -7,27 +7,28 @@ interface ProductJSONLDProps {
 }
 
 const ProductJSONLD = ({ product }: ProductJSONLDProps) => {
-  const ProductJSONLD = `
-    {
-        "@context": "http://schema.org",
-        "@type": "Product",
-        "name": "${product.name}",
-        "image": "${product.image.url}",
-        "description": "${product.description}",
-        "offers": {
-            "@type": "Offer",
-            "url": "https://holamichoacanicecream.com/${product.category.slug}/${product.slug}",
-            "priceCurrency": "USD",
-            "price": "${formatPrice(product.price)}",
-            "itemCondition": "http://schema.org/NewCondition",
-            "availability": "http://schema.org/InStock"
-        }
-    }
-    `;
+  const json = {
+    '@context': 'http://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    image: product.image.url,
+    description: product.description,
+    offers: {
+      '@type': 'Offer',
+      url: `https://holamichoacanicecream.com/menu/${product.slug}`,
+      priceCurrency: 'USD',
+      price: formatPrice(product.price),
+    },
+    itemCondition: 'http://schema.org/NewCondition',
+    availability: 'http://schema.org/InStock',
+  };
 
   return (
     <Head>
-      <script type='application/ld+json'>{ProductJSONLD}</script>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
+      />
     </Head>
   );
 };
