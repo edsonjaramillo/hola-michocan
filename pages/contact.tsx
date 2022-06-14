@@ -51,9 +51,9 @@ const ContactPage: NextPage = () => {
     <>
       <HeadOpenGraph
         title='Contact Us'
-        description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, corporis!'
-        image='https://via.placeholder.com/1200x630'
-        alt='Alt'
+        description='Contact Us for any inquiries or questions.'
+        image='https://media.graphassets.com/5Ggwcd9ORgGCtQc3vXa4'
+        alt='Hola Michoacan Ice Cream Logo'
       />
 
       <div className='contact responsive-width-contact'>

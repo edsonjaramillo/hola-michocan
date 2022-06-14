@@ -2,36 +2,41 @@ import { GetServerSideProps } from 'next';
 import { CTA, RestaurantJSONLD, AboutUs, FeaturedProducts } from '@/components/index';
 import { HeadOpenGraph } from '@/components/index';
 import { graphCMSClient } from '@/lib/graphcms/client';
-import { getFeaturedProducts, getProductsJSONLD } from '@/lib/graphcms/queries';
-import { ProductType } from '@/lib/graphcms/types';
+import { getHomepageProps, getProductsJSONLD } from '@/lib/graphcms/queries';
+import { AboutUsType, CallToActionType, CategoryType, ProductType } from '@/lib/graphcms/types';
 
 interface HomepageProps {
   menuProducts: ProductType[];
-  featuredProducts: ProductType[];
+  callToAction: CallToActionType;
+  aboutUs: AboutUsType;
+  iceCreamItems: CategoryType;
 }
 
-const Home = ({ menuProducts, featuredProducts }: HomepageProps) => (
+const Home = ({ menuProducts, callToAction, aboutUs, iceCreamItems }: HomepageProps) => (
   <>
-    {/* <pre>{JSON.stringify(menuProducts, null, 2)}</pre> */}
     <HeadOpenGraph
-      title='Homepage'
-      description='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis quod quo enim culpa labore facilis?'
-      image='https://picsum.photos/id/1060/1200/900'
+      title={callToAction.header}
+      description={aboutUs.description}
+      image='https://media.graphassets.com/5Ggwcd9ORgGCtQc3vXa4'
       alt='Homepage'
     />
-    <RestaurantJSONLD products={menuProducts} />
-    <CTA src='https://picsum.photos/id/1060/1200/900' alt='coffee being brewed' />
-    <AboutUs src='https://picsum.photos/id/513/1200/900' alt='coffee being brewed' />
-    <FeaturedProducts products={featuredProducts} />
+    <RestaurantJSONLD description={aboutUs.description} products={menuProducts} />
+    <CTA {...callToAction} />
+    <AboutUs {...aboutUs} />
+    <FeaturedProducts {...iceCreamItems} />
   </>
 );
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const { products: menuProducts } = await graphCMSClient.request(getProductsJSONLD);
-  const { products: featuredProducts } = await graphCMSClient.request(getFeaturedProducts);
+  const {
+    callToAction,
+    aboutUs,
+    category: iceCreamItems,
+  } = await graphCMSClient.request(getHomepageProps);
 
   return {
-    props: { menuProducts, featuredProducts },
+    props: { menuProducts, callToAction, aboutUs, iceCreamItems },
   };
 };
 

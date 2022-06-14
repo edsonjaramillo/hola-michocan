@@ -4,35 +4,44 @@ import { getCategoriesSitemap } from '@/lib/graphcms/queries';
 import { CategoryType } from '@/lib/graphcms/types';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
+import { HeadOpenGraph } from '@/components/index';
 
 interface SitemapPageProps {
   categories: CategoryType[];
 }
 
 const Sitemap = ({ categories }: SitemapPageProps) => (
-  <div className='sitemap responsive-width-sitemap'>
-    <h1 className='sitemap__header'>Sitemap</h1>
-    <hr />
-    <div className='sitemap__grid'>
-      <SitemapSection header='Main'>
-        <SitemapLink slug='/' name='Homepage' />
-        {navbarLinks.map((link) => (
-          <SitemapLink key={link.name} slug={link.slug} name={link.name} />
-        ))}
-      </SitemapSection>
-      <SitemapSection header='Legal'>
-        <SitemapLink slug='/policy' name='Privacy Policy' />
-        <SitemapLink slug='/terms' name='Terms and Conditions' />
-      </SitemapSection>
-      {categories.map((category) => (
-        <SitemapSection key={category.id} header={category.name}>
-          {category.products.map((product) => (
-            <SitemapLink key={product.id} slug={`/product/${product.slug}`} name={product.name} />
+  <>
+    <HeadOpenGraph
+      title='Sitemap'
+      description='Hola Michoacan Ice Cream Sitemap'
+      image='https://media.graphassets.com/5Ggwcd9ORgGCtQc3vXa4'
+      alt='Hola Michoacan Ice Cream Logo'
+    />
+    <div className='sitemap responsive-width-sitemap'>
+      <h1 className='sitemap__header'>Sitemap</h1>
+      <hr />
+      <div className='sitemap__grid'>
+        <SitemapSection header='Main'>
+          <SitemapLink slug='/' name='Homepage' />
+          {navbarLinks.map((link) => (
+            <SitemapLink key={link.name} slug={link.slug} name={link.name} />
           ))}
         </SitemapSection>
-      ))}
+        <SitemapSection header='Legal'>
+          <SitemapLink slug='/policy' name='Privacy Policy' />
+          <SitemapLink slug='/terms' name='Terms and Conditions' />
+        </SitemapSection>
+        {categories.map((category) => (
+          <SitemapSection key={category.id} header={category.name}>
+            {category.products.map((product) => (
+              <SitemapLink key={product.id} slug={`/product/${product.slug}`} name={product.name} />
+            ))}
+          </SitemapSection>
+        ))}
+      </div>
     </div>
-  </div>
+  </>
 );
 
 interface SitemapSectionProps {
