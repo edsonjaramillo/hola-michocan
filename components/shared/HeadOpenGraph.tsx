@@ -11,7 +11,6 @@ interface HeadOpenGraphProps {
   alt: string;
   ogType?: OpenGraphTypes;
   robots?: RobotTagTypes;
-  children?: any;
 }
 
 const HeadOpenGraph = ({
@@ -21,32 +20,46 @@ const HeadOpenGraph = ({
   alt,
   ogType = 'website',
   robots = 'index, follow',
-  children,
 }: HeadOpenGraphProps) => {
   const { asPath } = useRouter();
   const url = 'https://holamichoacanicecream.com';
+  const cannonicalURL = url + asPath;
+  const siteTitle = `${title} | Hola Michoacan Ice Cream`;
+
+  const websiteJson = {
+    '@context': 'http://schema.org',
+    '@type': 'WebSite',
+    url: cannonicalURL,
+    name: siteTitle,
+    description: description,
+    publisher: 'Hola Michoacan Ice Cream',
+  };
 
   return (
     <Head>
-      <title>{`${title} | Hola Michoacan`}</title>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJson) }}
+      />
+      <title>{siteTitle}</title>
       <meta name='description' content={description} />
-      <meta property='og:url' content={url} />
+      <meta property='og:url' content={cannonicalURL} />
       <meta property='og:type' content={ogType} />
       <meta property='og:title' content={title} />
       <meta property='og:description' content={description} />
       <meta property='og:image' content={image} />
       <meta property='og:image:alt' content={alt} />
       <meta name='twitter:card' content='summary_large_image' />
-      <meta property='twitter:domain' content={url} />
-      <meta property='twitter:url' content={url} />
+      <meta property='twitter:domain' content={cannonicalURL} />
+      <meta property='twitter:url' content={cannonicalURL} />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:image' content={image} />
       <meta name='twitter:image:alt' content={alt} />
-      <link rel='canonical' href={url + asPath} />
-      <meta name='theme-color' content='#0067bb' />
+      <link rel='canonical' href={cannonicalURL} />
+      <meta name='theme-color' content='#d50083' />
       <meta name='robots' content={robots} />
-      {children}
+      <meta name='viewport' content='width=device-width, initial-scale=1' />
     </Head>
   );
 };
