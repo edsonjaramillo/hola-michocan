@@ -85,7 +85,7 @@ const Navbar = () => {
         <nav className='navbar' title='main navigation bar'>
           <div className='navbar__content responsive-width'>
             <Link href='/'>
-              <a className='navbar__logo'>Logo</a>
+              <a className='navbar__logo'>Hola Michocan</a>
             </Link>
             <motion.div
               initial='close'
