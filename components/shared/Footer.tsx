@@ -53,9 +53,6 @@ const Footer = () => (
           <FooterLink slug='/terms' name='Terms and Conditions' />
           <FooterLink slug='/sitemap' name='Sitemap' />
         </FooterSection>
-        <FooterSection header='Information'>
-          <FooterLinkExternal slug='https://google.com' name='Write a Review' />
-        </FooterSection>
       </div>
       <div className='footer__socialgrid'>
         <FacebookIcon />
@@ -79,7 +76,9 @@ const InstagramIcon = () => (
 );
 
 const FacebookIcon = () => (
-  <FooterSocialIcon href='https://facebook.com' name='Facebook'>
+  <FooterSocialIcon
+    href='https://www.facebook.com/Hola-Michoacan-Ice-Cream-and-Coffee-Shop-Guntersville-101552595595192/'
+    name='Facebook'>
     <svg height='100%' viewBox='0 0 512 512' width='100%' xmlns='http://www.w3.org/2000/svg'>
       <path d='M374.245,285.825l14.104,-91.961l-88.233,0l0,-59.677c0,-25.159 12.325,-49.682 51.845,-49.682l40.117,0l0,-78.291c0,0 -36.408,-6.214 -71.214,-6.214c-72.67,0 -120.165,44.042 -120.165,123.775l0,70.089l-80.777,0l0,91.961l80.777,0l0,222.31c16.197,2.542 32.798,3.865 49.709,3.865c16.911,0 33.512,-1.323 49.708,-3.865l0,-222.31l74.129,0Z' />
     </svg>
