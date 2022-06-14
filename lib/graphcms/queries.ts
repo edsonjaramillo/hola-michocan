@@ -1,5 +1,37 @@
 import { gql } from 'graphql-request';
 
+export const getHomepageProps = gql`
+  query getHomepageProps {
+    callToAction(where: { id: "cl4a7gtg2h9g80bivzerzr2ap" }) {
+      header
+      subheader
+      image {
+        url
+      }
+    }
+    aboutUs(where: { id: "cl4a7lxobhajq0bivr9s64x08" }) {
+      header
+      description
+      image {
+        url
+      }
+    }
+    category(where: { id: "cl31icmwngwlq0bk1u4822fc2" }) {
+      name
+      products(orderBy: price_ASC) {
+        id
+        name
+        slug
+        price
+        image {
+          id
+          url
+        }
+      }
+    }
+  }
+`;
+
 export const getCategories = gql`
   query getCategories {
     categories(orderBy: name_ASC) {
@@ -79,10 +111,6 @@ export const getProduct = gql`
   query getProduct($slug: String!) {
     product(where: { slug: $slug }) {
       id
-      category {
-        id
-        slug
-      }
       slug
       name
       description
@@ -100,10 +128,6 @@ export const getProduct = gql`
       recommendations(first: 4, orderBy: price_ASC) {
         id
         name
-        category {
-          id
-          slug
-        }
         slug
         price
         image {
