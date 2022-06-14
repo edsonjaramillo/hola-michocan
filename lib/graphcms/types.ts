@@ -29,3 +29,15 @@ export interface OptionType {
   name: string;
   price: number;
 }
+
+export interface CallToActionType {
+  header: string;
+  subheader: string;
+  image: ImageType;
+}
+
+export interface AboutUsType {
+  header: string;
+  description: string;
+  image: ImageType;
+}
