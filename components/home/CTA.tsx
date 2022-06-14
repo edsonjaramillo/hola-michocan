@@ -1,3 +1,4 @@
+import { CallToActionType } from '@/lib/graphcms/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -6,14 +7,12 @@ interface CTAProps {
   alt: string;
 }
 
-const CTA = ({ src, alt }: CTAProps) => (
+const CTA = ({ header, subheader, image }: CallToActionType) => (
   <header className='cta'>
     <div className='cta__content'>
       <div className='cta__contentgrid responsive-width-cta'>
-        <h1 className='cta__header'>Your favorite neighborhood homemade ice cream shop!</h1>
-        <span className='cta__subheader'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, ipsa!
-        </span>
+        <h1 className='cta__header'>{header}</h1>
+        <span className='cta__subheader'>{subheader}</span>
         <div className='cta__buttongrid'>
           <Link href='/menu'>
             <a className='cta__button cta--primary'>View Menu</a>
@@ -29,7 +28,14 @@ const CTA = ({ src, alt }: CTAProps) => (
       </div>
     </div>
     <div className='cta__image'>
-      <Image src={src} layout='fill' objectFit='cover' alt={alt} quality={35} priority />
+      <Image
+        src={image.url}
+        layout='fill'
+        objectFit='cover'
+        alt={`Ice cream shop`}
+        quality={35}
+        priority
+      />
     </div>
   </header>
 );
