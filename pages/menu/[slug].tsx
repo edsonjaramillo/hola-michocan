@@ -1,8 +1,8 @@
-import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { BlurImage, HeadOpenGraph, ProductJSONLD } from '@/components/index';
 import { Options, Recommendations } from '@/components/index';
 import { graphCMSClient } from '@/lib/graphcms/client';
-import { getProduct } from '@/lib/graphcms/queries';
+import { getProduct, getProductSlugs } from '@/lib/graphcms/queries';
 import { ProductType } from '@/lib/graphcms/types';
 import { formatPrice } from '@/lib/graphcms/helper';
 
@@ -43,7 +43,7 @@ const ProductPage = ({ product }: ProductPageProps) => (
   </>
 );
 
-export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSidePropsContext) => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params as { slug: string };
 
   const { product } = await graphCMSClient.request(getProduct, { slug });
@@ -53,27 +53,17 @@ export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSideP
   };
 };
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const { products } = await graphCMSClient.request(getProductSlugs);
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { products } = await graphCMSClient.request(getProductSlugs);
 
-//   const paths = products.map((product: ProductType) => ({
-//     params: { slug: product.slug },
-//   }));
+  const paths = products.map((product: ProductType) => ({
+    params: { slug: product.slug },
+  }));
 
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
-
-// export const getStaticProps: GetStaticProps = async (ctx) => {
-//   const { slug } = ctx.params as { slug: string };
-
-//   const { product } = await graphCMSClient.request(getProduct, { slug });
-
-//   return {
-//     props: { product },
-//   };
-// };
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
 export default ProductPage;

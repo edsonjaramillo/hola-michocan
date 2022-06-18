@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import { CTA, RestaurantJSONLD, AboutUs, FeaturedProducts } from '@/components/index';
 import { HeadOpenGraph } from '@/components/index';
 import { graphCMSClient } from '@/lib/graphcms/client';
@@ -27,7 +27,7 @@ const Home = ({ menuProducts, callToAction, aboutUs, iceCreamItems }: HomepagePr
   </>
 );
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const { products: menuProducts } = await graphCMSClient.request(getProductsJSONLD);
   const {
     callToAction,
@@ -39,13 +39,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: { menuProducts, callToAction, aboutUs, iceCreamItems },
   };
 };
-
-// export const getStaticProps: GetStaticProps = async () => {
-// const { products: menuProducts } = await graphCMSClient.request(getProductsJSONLD);
-
-//   return {
-// props: { menuProducts },
-//   };
-// };
 
 export default Home;
